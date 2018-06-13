@@ -12,80 +12,176 @@ html {
   color: black;
   background-color: white;
   font-size: 106%; }/*1 rem = 17px; 17px/16px = 106%*/
-  
-/* *************** Header *************** */
 
-header{
-    font-weight: bold;
-    margin: 0.2rem; 
+/* *************** headings/fonts/colors *************** */
 
-    display:flex; /* this a flex container*/ 
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+h2{ 
+    padding:1rem 0; 
+    font-size:16px;
+    font-weight:bold; 
+    margin-bottom:1rem;
 }
-
-img{
-    flex: 1; 
-    padding:1rem; 
-}
-
-h1{
-    font-family: Verdana;
-    font-size: 14px;
-    font-weight: bold;
-    padding:1rem; 
-    flex: 2;
-    color: MediumAquamarine;
-}
-
-nav{
-    flex: 15; 
-    display:flex; /* this a flex container*/ 
-    justify-content: flex-end;
-    padding:1rem; 
-}
-
-nav span{
-    text-decoration: underline;
-    padding:1rem;
-}
-
-/* *************** Main *************** */
-
-
-.column.large {
-    width: 630px;  
-  }
-  
-  .column.medium {
-    width: 300px;  
-  }
-  
-  .column.small {
-    width: 240px;  
-  }
-h2{
-    padding:1rem 0;
-}
-  
+h3{ padding:1rem 0;} 
 h4{
     font-weight: bold;
-    font-size: 3rem;
     color: white;
 }
 
-
-
-article p{
-    padding:0.5rem 0;
+/*text on the main story*/
+.column.large article h4{
+    font-size:40px;
+}
+.column.large article p{
+    padding-top:1rem;
+}
+.column.medium p{
+    margin-bottom: 1rem; 
+}
+.column.small h2{
+    font-size:17px;
+}
+.middle_column_text{
+    padding-top:1rem;
 }
 
+/*The text for each story*/
+article h2{
+    font-family: Georgia;
+    padding:0.5rem 0;
+    font-size: 1.7rem;
+}
+
+/*The text on each image*/
+.article__imagetext{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* *************** Header *************** */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    background-color: white;
+
+    font-weight: bold;
+    margin: 0.2rem; 
+    align-items: center;
+    border-bottom: 1px solid black;
+    display:flex; /* this a flex container*/ 
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+    img{flex: 1; padding:1rem; }
+
+    h1{
+        font-family: Verdana;
+        font-size: 14px;
+        font-weight: bold;
+        padding:1rem; 
+        flex: 2;
+        color: MediumAquamarine;
+    }
+
+    nav{
+        flex: 15; 
+        display:flex; /* this a flex container*/ 
+        justify-content: flex-end;
+        padding:1rem; 
+    }
+
+        nav span{text-decoration: underline;padding:1rem;}
+
+/* *************** Main *************** */
+main{
+    margin-top:15vh;
+}
+/* The big left column */
+.column.large {
+    width: 630px;  
+}
+
+/* The middle column */
+.column.medium {
+    width: 300px;  
+}
+
+/* The right column */
+.column.small {
+    width: 240px;  
+}
+
+.column.small article{
+    text-align: center;
+}
+/* *************** footer *************** */
+
+footer{
+    background-color: MediumAquamarine;
+    width:100%;
+    height:35vh;
+
+    display: flex;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.footer-content{
+    margin: auto;
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: center;
+}
+.footer-content h6{
+    text-align: center;
+    font-family: Georgia;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding:1rem;
+}
+.footer-nav{
+    display:flex; /* this a flex container*/  
+    justify-content: center;
+    align-content: center;
+}
+.footer-nav span{
+    text-decoration: underline;
+    padding:1rem;
+}
+.footer-copyright-text{
+    display:flex; /* this a flex container*/  
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
+
+/* *************** Images *************** */
 .cookie{
-background-image: url(../img/img-news-bite.png);
-background-size: cover;
-background-repeat: no-repeat;
-height:250px;
+    background-image: url(../img/img-news-bite.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:250px;
 }
 
 .cat{
@@ -105,25 +201,54 @@ height:250px;
 .earth{
     background-image: url(../img/img-story-2.png);
     background-size: contain;
+    background-repeat: no-repeat;
     height:300px;
 }
 
 .research{
     background-image: url(../img/img-story-3.png);
     background-size: contain;
+    background-repeat: no-repeat;
     height:300px;
 }
+/* *************** list *************** */
 
-.article__footnote{
-    font-weight: bold;
-    font-size: 3rem;
-    color: white;
-  
+.column.small ul{
+    background-color: WhiteSmoke;
+    font-family: Verdana;
+    font-size: 12px;
+    color: DimGray;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    justify-content: space-around;
 }
 
+.column.small ul li{
+    margin:0;
+    padding:0.8rem;
+    text-align: left;
+    border: 0.5px solid black;
+    border-left: none;
+    border-right:none;
+    border-collapse: collapse;
+}
+.column.small ul li:first-child{
+    border-top: none;
+}
+.column.small ul li:last-child{
+    border-bottom: 1px solid black;
+}
+/* *************** flexxxx *************** */
+
+
+
 .flex-container {
-    padding: 2rem 1rem;
-    margin: 0;
+    padding: 2rem 0.5rem;
     list-style: none;
     
     display: -webkit-box;
@@ -148,7 +273,18 @@ height:250px;
     display: flex;
     
     -webkit-flex-flow: row wrap;
-    justify-content: space-around;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
   }
 
   .flex-container--small {
@@ -164,20 +300,15 @@ height:250px;
     
     -webkit-flex-flow: row wrap;
     justify-content: space-between;
+    align-content: flex-start;
   } 
 
   .flex-container--small article{
     flex: 1 200px;
-    margin:1rem;
+    margin:1rem 2rem 1rem 0;
   }
 
-  .one{order: 1;}
-  .two{
-    order: 2;
-  }
-  .three{
-    order: 3;
-  }
-  .four{
-    order: 4;
-  }
+  .one      {order: 1;}
+  .two      {order: 2;}
+  .three    {order: 3;}
+  .four     {order: 4;}
